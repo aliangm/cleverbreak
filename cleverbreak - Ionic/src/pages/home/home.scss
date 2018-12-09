@@ -1,0 +1,94 @@
+page-home {
+
+    ion-tabs{
+
+        .tab-button-icon{
+            background-repeat: no-repeat;
+            background-position: 50%;
+            height: 24px !important;
+            background-size:contain;
+            margin: 5px 0px 0px 0px !important;
+            text-transform: uppercase !important;
+            color: #484848 !important;
+        }
+        .tab-button-text{
+            margin-top: 0px !important;
+        }
+        .tab-button{
+            color: #999 !important;
+            font-weight: bold !important;
+            font-size: 12px !important;
+            .tab-button-icon{
+                &[ng-reflect-name="tab_explore"]{
+                    content: url('../assets/imgs/tab_explore_deactived.png');
+                }
+            }
+            .tab-button-icon{
+                &[ng-reflect-name="tab_guides"]{
+                    content: url('../assets/imgs/tab_guides_deactived.png');
+                }
+            }
+            .tab-button-icon{
+                &[ng-reflect-name="tab_trips"]{
+                    content: url('../assets/imgs/tab_trips_deactived.png');
+                }
+            }
+            .tab-button-icon{
+                &[ng-reflect-name="tab_message"]{
+                    content: url('../assets/imgs/tab_talk_deactived.png');
+                }
+            }
+            .tab-button-icon{
+                &[ng-reflect-name="tab_profile"]{
+                    content: url('../assets/imgs/tab_person_deactived.png');
+                }
+            }
+            &[aria-selected="true"]{
+                
+                color: black !important;
+                .tab-button-text{
+                    transition: none !important;
+                    transform: none !important;
+                }
+                
+                .tab-button-icon{
+                    &[ng-reflect-name="tab_explore"]{
+                        content: url('../assets/imgs/tab_explore_actived.png');
+                        transition: none !important;
+                        transform: none !important;
+                    }
+                }
+                .tab-button-icon{
+                    &[ng-reflect-name="tab_guides"]{
+                        content: url('../assets/imgs/tab_guides_actived.png');
+                        transition: none !important;
+                        transform: none !important;
+                    }
+                }
+                .tab-button-icon{
+                    &[ng-reflect-name="tab_trips"]{
+                        content: url('../assets/imgs/tab_trips_actived.png');
+                        transition: none !important;
+                        transform: none !important;
+                    }
+                }
+                .tab-button-icon{
+                    &[ng-reflect-name="tab_message"]{
+                        content: url('../assets/imgs/tab_talk_actived.png');
+                        transition: none !important;
+                        transform: none !important;
+                    }
+                }
+                .tab-button-icon{
+                    &[ng-reflect-name="tab_profile"]{
+                        content: url('../assets/imgs/tab_person_actived.png');
+                        transition: none !important;
+                        transform: none !important;
+                    }
+                }
+            }
+        }
+
+
+    }
+}

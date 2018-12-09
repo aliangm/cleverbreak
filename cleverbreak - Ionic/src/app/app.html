@@ -1,0 +1,43 @@
+<!--<ion-menu [content]="content" type="overlay" class="colorMenu font-avenir-light">
+  <ion-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3 class="user-avatar">
+          <img src="assets/imgs/avatar.png" />
+        </ion-col>
+        <ion-col col-9>
+          <ion-row>
+            <ion-col class="color-white user-name">
+              Martin
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="color-white padding-y-00">
+              Customer since June 2018
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pagesFooter" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-footer>
+
+</ion-menu>-->
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

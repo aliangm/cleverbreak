@@ -1,0 +1,35 @@
+page-profile {
+    .user_img{
+        max-height: 200px;
+        max-width: 200px;
+        display: block;
+        margin: auto;
+        border-radius: 50%;
+        object-fit: cover;
+        width: 200px;
+        height: 200px;
+    }
+    .personal{
+        margin-top: 20px !important;
+    }
+    .menu_item{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #575757;
+        margin-top: 1rem;
+        border-bottom: 1px solid #dedede;
+    }
+    .header{ 
+        height: 4rem;
+        border-bottom-style: solid; 
+        border-bottom-color:#dedede;
+        border-bottom-width: 1px;
+    }
+    .title{
+        padding-left: 20px;
+        line-height: 4rem;
+        font-weight: bold;
+        color: #1a1a1a;
+        font-size: 1.8rem;
+    }
+}

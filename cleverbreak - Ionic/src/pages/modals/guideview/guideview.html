@@ -1,0 +1,158 @@
+<!--
+  Generated template for the GuideviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--
+  Generated template for the TourviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content no-padding style="padding: 0px">
+    <ion-list *ngIf="guide.user != null">
+      <ion-row>
+        <ion-col>
+          <div class="" style="width: 100%; width: calc(100% + 10px);  margin: -5px;">
+              <ion-icon name="arrow-round-back" (click)="dismiss()" class="back_icon"></ion-icon>
+              <ion-icon (click)="addToWishlist()" *ngIf="isWish == false" name="heart" style="color:#c6c7ca; opacity:.8; position: absolute; top: 1.5rem; right: 1rem; z-index: 1000;"></ion-icon>
+              <ion-icon (click)="removeFromWishlist()" *ngIf="isWish == true" name="heart" style="color: #f92534; position: absolute; top: 1.5rem; right: 1rem; z-index: 1000;"></ion-icon>
+            <img class="icon" src="{{appInfo.common.url}}images/users/{{guide.user.picture}}" style="width: 100% !important"/>
+            <button ion-button small class="btn_follow" (click)="clickFollow()">
+              <ng-container *ngIf="isFollowed == false">Follow</ng-container><ng-container *ngIf="isFollowed == true">Unfollow</ng-container>
+            </button>
+            <i class="material-icons btn_msg" (click)="clickViewMessage()">
+              message
+            </i>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="padding">
+        <ion-col col-12 class="tour_title">
+          {{guide.user.firstname}} {{guide.user.lastname}}
+        </ion-col>
+      </ion-row>
+      <ion-row class="padding">
+        <ion-col class="guide_content">
+          {{guide.user.location}}
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="guide.isVerified == true" class="guide_content padding">
+        <i class="material-icons icon_verified">
+          verified_user
+        </i>
+        &nbsp;Verified
+      </ion-row>
+      <ion-row  class="padding">
+        <ion-col class="guide_content">
+            {{guide.user.languages}}
+        </ion-col>
+      </ion-row>
+      <ng-container *ngIf="guide.user.aboutme != null">
+        <ion-row   class="padding margin" style="border-bottom: #dedede; border-bottom-style: solid; border-bottom-width: 1px;">
+          <ion-col class="para_text">
+            
+            {{guide.user.aboutme.substring(0, 120)}}
+            <span *ngIf="guide.user.aboutme.length > 120" class="btn_more" (click)="clickViewAllAboutGuide()">...more</span>
+          </ion-col> 
+        </ion-row>
+      </ng-container>
+      <ion-row class="padding">
+        <ion-col class="para_title">
+          Tours by {{guide.user.firstname}}
+        </ion-col>
+      </ion-row>
+      <ion-row class="padding">
+        <ng-container *ngFor="let tour of guide.tours">
+            <ion-col col-3>
+              <img src="{{appInfo.common.url}}/images/tours/{{tour.photo}}" class="img_tours" (click)="clickTour(tour)">
+            </ion-col>
+        </ng-container>
+      </ion-row>
+      <ion-row class="padding margin">
+        <ion-col col-12 class="para_title">References</ion-col>
+        <ion-col no-padding>
+        <ion-row no-padding>
+            <img src="http://cleverbreak-ionpan.c9users.io/images/users/1521319610.jpg" class="review_image">
+            <ion-col col-10 class="review_text">
+              <ion-row class="para_text">
+                Lorem Ipsum has been the industry's standard.
+              </ion-row>
+              <ion-row class="review_date">
+                  Thu, Dec 27, 2018
+              </ion-row>
+            </ion-col>
+            <span class="btn_viewall">
+              View&nbsp;all
+            </span>
+        </ion-row>
+        </ion-col>
+      </ion-row>
+      <ng-container *ngIf="guide.reviews != null">
+        <ion-row class="margin padding">
+          <ion-col col-12 class="para_title">Reviews ({{guide.reviews.length}})</ion-col>
+          <ion-col no-padding style="margin-top: 10px !important">
+            <ng-container *ngFor="let review of guide.reviews;let i = index">
+              <ng-container *ngIf="i < 5">
+                <ion-row no-padding class="review_row">
+                  <ng-container *ngIf="review.user">
+                  <img src="{{appInfo.common.url}}images/users/{{review.user.picture}}" class="review_image"></ng-container>
+                  <ion-col col-10 class="review_text">
+                    <ion-row class="para_text">
+                      {{review.review}}
+                    </ion-row>
+                    <ion-row class="review_date">
+                        {{review.updated_at}}
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ng-container>
+            </ng-container>
+            <span *ngIf="guide.reviews.length > 5" class="btn_viewall" (click)="clickViewAllReviews()">View all</span>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+    </ion-list>
+  </ion-content>
+  <ion-footer>
+      <ion-row>
+        <ion-col style="padding-top: 0px !important">
+          <ion-row>
+            <ion-col col-6 class="price">
+              <ion-row>
+                ${{guide.priceForTourGuide}} per person
+              </ion-row>
+              <ion-row class="rating-bar" text-right>
+                <ion-icon ios="ios-star" md="ios-star" *ngIf="guide.ratings >= 1"></ion-icon>
+                <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="guide.ratings == 0.5"></ion-icon>
+                <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="guide.ratings <= 0"></ion-icon>
+    
+                <ion-icon ios="ios-star" md="ios-star" *ngIf="guide.ratings >= 2"></ion-icon>
+                <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="guide.ratings == 1.5"></ion-icon>
+                <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="guide.ratings <= 1"></ion-icon>
+    
+                <ion-icon ios="ios-star" md="ios-star" *ngIf="guide.ratings >= 3"></ion-icon>
+                <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="guide.ratings == 2.5"></ion-icon>
+                <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="guide.ratings <= 2"></ion-icon>
+    
+                <ion-icon ios="ios-star" md="ios-star" *ngIf="guide.ratings >= 4"></ion-icon>
+                <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="guide.ratings == 3.5"></ion-icon>
+                <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="guide.ratings <= 3"></ion-icon>
+    
+                <ion-icon ios="ios-star" md="ios-star" *ngIf="guide.ratings >= 5"></ion-icon>
+                <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="guide.ratings == 4.5"></ion-icon>
+                <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="guide.ratings <= 4"></ion-icon>
+                <span class="review_number">
+                    (<ng-container *ngIf="guide.reviews != null">{{guide.reviews.length}}</ng-container>
+                    <ng-container *ngIf="guide.reviews == null">0</ng-container>)
+                </span>
+              </ion-row>
+            </ion-col>
+            <ion-col col-6 no-padding class="btn_book" (click)="clickViewGuideBookPage()">
+              Book
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-footer>

@@ -1,0 +1,165 @@
+<!--
+  Generated template for the PostRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-row>
+    <ion-col class="title">
+      Post new request
+    </ion-col>
+  </ion-row>
+  <i class="material-icons icon_back" (click)="closePostRequest()">
+    close
+  </i>
+</ion-header>
+<ion-content padding>
+  <ion-row>
+    <ion-col col-3>
+      Title
+    </ion-col>
+    <ion-col col-9>
+      <ion-input class="text_input" [(ngModel)]="title">
+      </ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-3>
+      Location
+    </ion-col>
+    <ion-col col-9>
+      <ion-input class="text_input" [(ngModel)]="location">
+
+      </ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-3>
+      Language
+    </ion-col>
+    <ion-col col-9>
+      <ion-item class="language_select" >
+        <ion-select [(ngModel)]="language" interface="action-sheet">
+          <ion-option>All</ion-option>
+          <ion-option>English</ion-option>
+          <ion-option>French</ion-option>
+          <ion-option>Russian</ion-option>
+          <ion-option>German</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-3>
+      Price
+    </ion-col>
+    <ion-col col-5>
+      <ion-input class="text_input" type="number" [(disabled)]="isFree" [(ngModel)]="price">
+      </ion-input>
+    </ion-col>
+    <ion-col col-3 class="price" >
+      or Free
+    </ion-col>
+    <ion-col col-1>
+      <ion-checkbox [(ngModel)]="isFree"></ion-checkbox>
+    </ion-col>
+
+  </ion-row>
+  <ion-row>
+    <ion-col col-3>
+      Date
+    </ion-col>
+    <ion-col col-9>
+      <ion-datetime displayFormat="DDD MMM D, YYYY" [(ngModel)]="date" class="date_picker"></ion-datetime>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-3>
+      Time
+    </ion-col>
+    <ion-col col-9>
+      <ion-row>
+        <ion-col col-6 no-padding>
+          <ion-datetime displayFormat="HH:mm" [(ngModel)]="time_from" class="time_picker"></ion-datetime>
+        </ion-col>
+        <ion-col col-6 no-padding>
+          <ion-datetime displayFormat="HH:mm" [(ngModel)]="time_to" class="time_picker"></ion-datetime>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-3>
+      Guests
+    </ion-col>
+    <ion-col col-3>
+      <ion-row>
+        Adults
+      </ion-row>
+      <ion-row>
+        <ion-input class="text_input" [(ngModel)]="number_adults"></ion-input>
+      </ion-row>
+    </ion-col>
+    <ion-col col-3>
+      <ion-row>
+        Children
+      </ion-row>
+      <ion-row>
+        <ion-input class="text_input" [(ngModel)]="number_children"></ion-input>
+      </ion-row>
+    </ion-col>
+    <ion-col col-3>
+      <ion-row>
+        Infants
+      </ion-row>
+      <ion-row>
+        <ion-input class="text_input" [(ngModel)]="number_infants"></ion-input>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+
+  </ion-row>
+  <ion-row>
+    <ion-col col-3>
+      Interests
+    </ion-col>
+    <ion-col col-9>
+      <ion-item class="interest_select">
+          <ion-select [(ngModel)]="interests" interface="action-sheet" multiple="true">
+            <ion-option>Workshop</ion-option>
+            <ion-option>Water Activities</ion-option>
+            <ion-option>Surfing</ion-option>
+            <ion-option>Sports</ion-option>
+            <ion-option>Nightlife</ion-option>
+            <ion-option>Nature</ion-option>
+            <ion-option>Music</ion-option>
+            <ion-option>History</ion-option>
+            <ion-option>Health</ion-option>
+            <ion-option>Food & Drinks</ion-option>
+            <ion-option>Entertainment</ion-option>
+            <ion-option>Concerts</ion-option>
+            <ion-option>Arts</ion-option>
+          </ion-select>
+        </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-3>
+      About this request
+    </ion-col>
+    <ion-col col-9>
+      <ion-input class="about_text" [(ngModel)]="about">
+
+      </ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <button ion-button class="btn_publish" (click)="publishRequest()">
+        Publish
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>

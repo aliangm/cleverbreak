@@ -1,0 +1,108 @@
+<!--
+  Generated template for the TourConfirmPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-row>
+      <ion-col col-8>
+        <img src="{{appInfo.common.url}}images/logo.png" class="logo_img">
+      </ion-col>
+    </ion-row>
+    <i class="material-icons icon_back" (click)="closeTourConfirmPage()">
+        close
+    </i>
+  </ion-header>
+  
+  
+  <ion-content padding>
+  <ion-list> 
+  <ion-row>
+    <ion-col text-right>
+      <button ion-button class="btn_cancel" (click)="onClickCancel()">Cancel booking</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col  class="font_bold">
+      Your booking is confirmed
+    </ion-col>
+  </ion-row>
+  <ion-row class="border">
+    <ion-col>
+      Reservation code: <span class="font_bold">{{booking.booking_id}}</span>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="booking?.photo">
+    <ion-col>
+      <img src="{{appInfo.common.url}}images/tours/{{booking['photo']}}">
+    </ion-col>
+  </ion-row>
+  <ion-row class="border">
+    <ion-col class="font_bold">
+      {{booking.title}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="font_bold">
+      Address
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      {{booking.location}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col  class="font_bold">
+      Date
+    </ion-col>
+  </ion-row>
+  <ion-row class="border">
+    <ion-col>
+      {{booking?.date_to}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col  class="font_bold">
+      Time
+    </ion-col>
+  </ion-row>
+  <ion-row class="border">
+    <ion-col>
+      {{booking?.time}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="font_bold">
+      Guests
+    </ion-col>
+  </ion-row>
+  <ion-row class="border">
+    <ion-col>
+      <span *ngIf="booking?.guests_adults">Adults</span><span *ngIf="booking?.guests_children">Children</span><span *ngIf="booking?.guests_infants">Infants</span>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="booking.about_tour">
+    <ion-col class="font_bold">
+      About this tour
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="booking.about_tour" class="border">
+    <ion-col >
+      {{booking.about_tour}}
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="booking.interests">
+    <ion-col class="font_bold">
+      What is included?
+    </ion-col>
+  </ion-row>
+  <ion-row class="border">
+    <ion-col *ngIf="booking.interests">
+      {{booking.interests}}
+    </ion-col>
+  </ion-row>
+  </ion-list>
+  </ion-content>
+  

@@ -1,0 +1,81 @@
+<!--
+  Generated template for the ConfirmRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+<ion-row class="header">
+  <ion-col no-padding>
+    Confirm booking request
+  </ion-col>
+</ion-row>
+<i class="material-icons icon_close" (click)="closeConfirmRequest()">
+    close
+</i>
+</ion-header>
+<ion-content padding>
+<ion-row>
+  <ion-col class="font_bold">
+    Your customer
+  </ion-col>
+</ion-row>
+<ion-row *ngIf="request.customer">
+  <ion-col>
+    <img src="{{appInfo.common.url}}images/users/thumbnail/{{request.customer.picture}}" class="img_customer">
+    <span class="customer_name">{{request.customer.firstname}} {{request.customer.lastname}}</span>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col class="font_bold">
+    Date & Time
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col>
+    {{request.date_to}}
+  </ion-col>
+</ion-row>
+<ion-row>
+    <ion-col class="font_bold">
+      Guests
+    </ion-col>
+  </ion-row>
+<ion-row>
+  <ion-col>
+    {{request.guests_adults}} Adults {{request.guests_children}} Children {{request.guests_infants}} Infants  
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col class="font_bold">
+    Additional notes
+  </ion-col>
+  </ion-row>
+<ion-row *ngIf="request.additional">
+  <ion-col>
+    {{request.additional}}
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col class="font_bold">
+    Total
+  </ion-col>
+  </ion-row>
+<ion-row>
+  <ion-col>
+    {{request.grand_total}}
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col col-6>
+    <button ion-button class="btn_reject"  (click)="onClickReject()">
+      Reject
+    </button>
+  </ion-col>
+  <ion-col col-6>
+    <button ion-button class="btn_accept" (click)="onClickAccept()">
+      Accept
+    </button>
+  </ion-col>
+</ion-row>
+</ion-content>

@@ -1,0 +1,42 @@
+page-tour-confirm {
+    ion-header{
+        background: #fff;
+        height: 40px;
+        .icon_back{
+            color: #767676;
+            z-index: 1000;
+            position: absolute;
+            top: 8px;
+            right: 3px;
+            font-size: 3rem;
+            font-weight: 400
+        }
+    }
+    ion-content{
+        .font_bold{
+            font-weight: 700;
+        }
+        font-weight: 500;
+        .scroll-content{
+            padding: 5px !important;
+        }
+        .btn_cancel{
+            background: #fff;
+            letter-spacing: 0.2px;
+            color: #484848;
+            border:1px solid #dedede;
+            box-shadow: none;
+            height: 35px;
+            width: 130px;
+            font-size: 15px;
+            margin: 0px;
+        }
+    }
+    .border{
+        border-bottom: 1px solid #dedede;
+        .logo_img{
+            object-fit: cover;
+
+        }
+    }
+}

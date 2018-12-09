@@ -1,0 +1,78 @@
+page-new-card {
+    .detail{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #4b4b4b;
+        padding-bottom: 0rem;
+        padding-top: 10px;
+    }
+    .detail_input{
+        padding-top: 0.1rem;
+        padding-bottom: 0rem;
+    }
+    .input{
+        border-color:#dedede;
+        border-style:solid;
+        border-width: 1px;
+        border-radius: 2px;
+        height: 33px;
+        width: 100%;
+        margin: 0rem;
+        display: flex !important;
+        align-content: center !important;
+        align-items: center !important;
+    }
+    .date{
+        border-color:#dedede;
+        border-style:solid;
+        border-width: 1px;
+        padding-left: 0.5rem !important;
+        height: 33px;
+        display: flex !important;
+        align-content: center !important;
+        align-items: center !important;
+    }
+    .header{ 
+        height: 4.3rem;
+        border-bottom-style: solid; 
+        border-bottom-color:#dedede;
+        border-bottom-width: 1px;
+    }
+    .back_icon{
+        z-index: 1000;
+        position: absolute;
+        top: 0rem;
+        left: 2rem;
+        line-height: 4.3rem;
+        font-size: 3rem;
+        font-weight: 400;
+    }
+    .credit_icon{
+        color: #b3b3b3;
+        position: absolute;
+        position: absolute;
+        top: .3rem;
+        font-size: 3rem;
+        left: 0.7rem;
+    }
+    .card_input{
+        padding-left: 35px;
+    }
+    .btn_save{
+        margin-top: 2rem;
+        background: #47bc00;
+        border-radius: 4px;
+        font-size: 1.5rem;
+        width: 83px;
+        height: 30px;
+    }
+    .title{
+        padding-left: 8rem;
+        line-height: 4.3rem;
+        position: absolute;
+        top: 0rem;
+        font-weight: bold;
+        color: #1a1a1a;
+        font-size: 1.8rem;
+    }
+}

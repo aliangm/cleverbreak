@@ -1,0 +1,69 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header class="bg-img-none">
+  <ion-title class="font-mrrooster-reg text-center">
+    {{appInfo.common.name}}
+  </ion-title>
+</ion-header>
+
+<ion-content padding col-10 offset-1 col-xs-10 offset-xs-1 col-sm-6 offset-sm-3 col-md-4 offset-md-4>
+  <ion-list>
+
+    <form #form="ngForm" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" name="email" formControlName="email" required minlength="4" (onChange)="onTyping()"></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div class="error-message" *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched || isCalledSubmit)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" name="password" formControlName="password" required (onChange)="onTyping()"></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.password">
+          <div class="error-message" *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched || isCalledSubmit)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <!--<ion-row justify-content-end class="padding-y-20">
+        Forgot password ?
+      </ion-row>-->
+      <div class="validation-errors">
+        <ng-container *ngFor="let error of submit_errors">
+          <div class="error-message">
+            {{ error }}
+          </div>
+        </ng-container>
+      </div>
+      <button type="submit" ion-button block color="secondary" class="font-avenir-roman" [disabled]="!loginForm.valid">
+        Login
+      </button>
+      <ion-row justify-content-center class="padding-y-20">
+        <span class="color-999">New User?</span>
+        <span class="padding-left-15">
+          <a href="https://cleverbreak-ionpan.c9users.io/">
+            Sign Up
+          </a>
+        </span>
+      </ion-row>
+
+    </form>
+
+
+  </ion-list>
+</ion-content>

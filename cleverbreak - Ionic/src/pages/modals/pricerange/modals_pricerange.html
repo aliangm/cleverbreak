@@ -1,0 +1,32 @@
+<div class="alert-wrapper" style="opacity: 1; transform: scale(1);">
+    <div class="alert-head">
+        <h2 class="alert-title" id="alert-hdr-0">Price</h2>
+    </div>
+    <div class="alert-message" id="alert-msg-0"></div>
+    <div class="dialog-content">
+            <ion-item>
+                <ion-label color="primary">
+                    <ion-icon name="logo-usd"></ion-icon> Min
+                </ion-label>
+                <ion-input type="number" [(ngModel)]="data.min"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label color="primary">
+                    <ion-icon name="logo-usd"></ion-icon> Max
+                </ion-label>
+                <ion-input type="number" [(ngModel)]="data.max"></ion-input>
+            </ion-item>
+            <div class="validation-errors">
+              <ng-container *ngFor="let error of submit_errors">
+                <div class="error-message">
+                  {{ error }}
+                </div>
+              </ng-container>
+            </div>
+    </div>
+    <div class="alert-button-group">
+        <button ion-button clear (click)="dismiss()">Cancel</button>
+        <button ion-button clear (click)="apply()">Apply</button>
+    </div>
+</div>

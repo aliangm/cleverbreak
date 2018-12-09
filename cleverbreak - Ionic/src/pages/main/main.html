@@ -1,0 +1,195 @@
+<!--
+  Generated template for the MainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-searchbar [(ngModel)]="searchInfo.keyword" [showCancelButton]="shouldShowCancel" (search)="onSearchInput($event)"
+    (ionCancel)="onSearchCancel($event)" placeholder="Try &quot;San Francisco&quot;">
+  </ion-searchbar>
+  <ion-row>
+      <ion-col col-3 style="padding-left: 0rem !important">
+        <button class="small_button" ion-button round color="light" (click)="searchSelectDates($event)">
+          <i *ngIf="searchInfo.dateRange.from != null || searchInfo.dateRange.to != null" class="material-icons check_icon">
+                check
+          </i>
+          Dates  
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button class="small_button" ion-button round color="light" (click)="searchSelectGuests($event)">
+            <span *ngIf="searchInfo.guests != '0'">
+                <i class="material-icons check_icon">
+                  check
+                </i>
+              </span>
+          Guests
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button class="small_button" ion-button round color="light" (click)="searchSelectInterests($event)">
+            <span *ngIf="searchInfo.interests.length > 0">
+                <i class="material-icons check_icon">
+                  check
+                </i>
+              </span>
+          Interests
+          
+        </button>
+      </ion-col>
+      <ion-col col-3 style="padding-right: 0px !important">
+        <button class="small_button" ion-button round color="light" (click)="searchSelectPrice($event)">
+            <span *ngIf="searchInfo.pricerange.min > 0 || searchInfo.pricerange.max > 0">
+                <i class="material-icons check_icon">
+                  check
+                </i>
+              </span>
+          Price
+          
+        </button>
+      </ion-col>
+      <!-- <ion-col col-2 style="padding-right: 0rem !important">
+        <button class="small_button" ion-button round color="light" (click)="searchSelectGuideType($event)">
+          Type
+          <span *ngIf="searchInfo.guidetype != '0'">
+            <i class="material-icons check_icon">
+              check
+            </i>
+          </span>
+        </button>
+      </ion-col> -->
+    </ion-row>
+</ion-header>
+<ion-content padding>
+  <ion-row class="horizontal-list-header">
+    <ion-col>
+      Explore experiences
+    </ion-col>
+    <!--
+    <ion-col col-2 col-xs-3 col-sm-2 (click)="clickSeeAllTours('All')">
+      See all
+    </ion-col>
+  -->
+
+  </ion-row>
+  <ion-grid class="padding-0">
+    <ion-row>
+      <ion-col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 class="list-item" *ngFor="let tour of mainData.tours">
+        <ion-row class="slider">
+          <ion-icon (click)="addToWishlist(tour.id)" *ngIf="appInfo.common.wishlist[tour.id] == null||appInfo.common.wishlist[tour.id] == false" name="heart" style="color:#c6c7ca; opacity:.8; position: absolute; top: 2rem; right: 1rem; z-index: 1000;"></ion-icon>
+          <ion-icon (click)="removeFromWishlist(tour.id)" *ngIf="appInfo.common.wishlist[tour.id] != null && appInfo.common.wishlist[tour.id] == true" name="heart" style="color: #f92534; position: absolute; top: 2rem; right: 1rem; z-index: 1000;"></ion-icon>
+          <ng-container *ngIf="tour.video == 'yes';else photos">
+            <iframe width="100%" height="100%" [src]=" tour.videoUrl | videoPlayer"  frameborder="0" allowfullscreen></iframe>
+          </ng-container>
+          <ng-template #photos>
+            <ng-container *ngIf="tour.photos">
+              <ng-container *ngIf="tour.photos.length > 0">
+                <ion-slides pager="true">
+                  <ion-slide *ngFor="let photo of tour.photos">
+                    <img src="{{appInfo.common.url}}images/tours/{{photo.mediaFilePath}}" />
+                  </ion-slide>
+                </ion-slides>
+              </ng-container>
+            </ng-container>
+            <ng-container *ngIf="tour.photos">
+              <ng-container *ngIf="tour.photos.length == 0">
+                <img src="{{appInfo.common.url}}images/tours/{{tour.photo}}" />
+              </ng-container>
+            </ng-container>
+          </ng-template>
+        </ion-row>
+        <ion-row class="location" text-wrap (click)="clickViewTour(tour)">
+          {{tour.locations}} • {{tour.interests}}
+        </ion-row>
+        <ion-row class="name" (click)="clickViewTour(tour)">
+          {{tour.title}}
+        </ion-row>
+        <ion-row class="price" (click)="clickViewTour(tour)">
+          <span class="value">${{tour.price_per_adult}}</span>&nbsp;per person
+        </ion-row>
+        <ion-row class="price" (click)="clickViewTour(tour)">
+          <ion-col class="highlight-color" no-padding>
+            <ion-col class="rating-bar" col-8 text-right no-padding>
+              <ion-icon name="star" md="ios-star" *ngIf="tour.stars >= 1"></ion-icon>
+              <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="tour.stars == 0.5"></ion-icon>
+              <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="tour.stars <= 0"></ion-icon>
+
+              <ion-icon name="star" md="ios-star" *ngIf="tour.stars >= 2"></ion-icon>
+              <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="tour.stars == 1.5"></ion-icon>
+              <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="tour.stars <= 1"></ion-icon>
+
+              <ion-icon name="star" md="ios-star" *ngIf="tour.stars >= 3"></ion-icon>
+              <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="tour.stars == 2.5"></ion-icon>
+              <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="tour.stars <= 2"></ion-icon>
+
+              <ion-icon name="star" md="ios-star" *ngIf="tour.stars >= 4"></ion-icon>
+              <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="tour.stars == 3.5"></ion-icon>
+              <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="tour.stars <= 3"></ion-icon>
+
+              <ion-icon name="star" md="ios-star" *ngIf="tour.stars >= 5"></ion-icon>
+              <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="tour.stars == 4.5"></ion-icon>
+              <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="tour.stars <= 4"></ion-icon>
+            </ion-col>
+            <ion-col col-4 *ngIf="tour?.reviews_length; else elseBlock"> ({{tour.reviews_length}})</ion-col>
+            <ng-template #elseBlock>
+              <ion-col col-4 > ({{tour.reviews_length}})</ion-col>
+            </ng-template>
+          </ion-col>
+        </ion-row>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!--
+  <ion-row class="horizontal-list-header">
+    <ion-col>
+      Experiences by locals
+    </ion-col>
+    <ion-col col-2 col-xs-3 col-sm-2 (click)="clickSeeAllTours('experiences')">
+      See all
+    </ion-col>
+  </ion-row>
+  <ion-grid class="padding-0">
+    <ion-row nowrap class="horizontal-list">
+      <ion-col col-4 col-sm-3 col-md-3 col-lg-2 col-xl-2 class="list-item" *ngFor="let tour of mainData.experiences" (click)="clickViewTour(tour)">
+        <ion-row>
+          <img class="icon"  src="{{appInfo.common.url}}images/tours/{{tour.photo}}" />
+        </ion-row>
+        <ion-row class="name">
+          {{tour.title}}
+        </ion-row>
+        <ion-row class="price">
+          <span class="value">${{tour.price_per_adult}}</span>&nbsp;/ person
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-row class="horizontal-list-header">
+    <ion-col>
+      Guides
+    </ion-col>
+    <ion-col col-2 col-xs-3 col-sm-2 (click)="clickSeeAllGuides()">
+      See all
+    </ion-col>
+  </ion-row>
+  <ion-grid class="padding-0">
+    <ion-row nowrap class="horizontal-list">
+      <ion-col col-4 col-sm-3 col-md-3 col-lg-2 col-xl-2 class="list-item" *ngFor="let guide of mainData.guides"
+        (click)="clickViewGuide(guide)">
+        <ion-row>
+          <img class="icon" src="{{appInfo.common.url}}images/users/{{guide.user.picture}}" />
+        </ion-row>
+        <ion-row class="name">
+          {{guide.user.firstname}} {{guide.user.lastname}}
+        </ion-row>
+        <ion-row class="price">
+          <ion-col text-nowrap class="text-one-line">
+              <span class="value">${{guide.priceForTourGuide}}/h</span>&nbsp;{{guide.locations}}
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>  
+  </ion-grid>
+-->
+</ion-content>

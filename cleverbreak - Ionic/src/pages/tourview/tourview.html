@@ -1,0 +1,170 @@
+<!--
+  Generated template for the TourviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content no-padding style="padding: 0px;">
+  <ion-list *ngIf="tourData != null">
+    <ion-row>
+      <ion-col>
+        <div class="image_container">
+          <ion-icon name="arrow-round-back" (click)="dismiss()" class="icon_back"></ion-icon>
+          <ion-icon (click)="addToWishlist(tourData.tour.id)" *ngIf="appInfo.common.wishlist[tourData.tour.id] == null||appInfo.common.wishlist[tourData.tour.id] == false" name="heart" style="color:#c6c7ca; opacity:.8; position: absolute; top: 2rem; right: 1rem; z-index: 1000;"></ion-icon>
+          <ion-icon (click)="removeFromWishlist(tourData.tour.id)" *ngIf="appInfo.common.wishlist[tourData.tour.id] != null && appInfo.common.wishlist[tourData.tour.id] == true" name="heart" style="color: #f92534; position: absolute; top: 2rem; right: 1rem; z-index: 1000;"></ion-icon>
+           <ng-container *ngIf="tour.video == 'yes';else photos">
+            <iframe width="100%" height="100%" [src]="videoUrl"  frameborder="0" allowfullscreen></iframe>
+          </ng-container>
+           <ng-template #photos>
+              <img style="height: 230px;width: 100% !important; object-fit: cover;" src="{{appInfo.common.url}}images/tours/{{tourData.tour.photo}}" />
+           </ng-template>
+           <ng-container *ngIf="tour.photos">
+          <i *ngIf="tour?.photos.length > 0" class="material-icons btn_morephoto" (click)="clickedMorePhotos()">
+            photo_library
+          </i>
+        </ng-container>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="padding">
+      <ion-col col-12 class="tour_title">
+        {{tourData.tour.title}}
+      </ion-col>
+    </ion-row>
+    <ion-row class="padding">
+      <ion-col class="tour_content" col-12>
+        {{tourData.tour.views}} viewed 120 times booked
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding>
+      <ion-col col-6 no-padding>
+        <ion-row class="padding">
+          <ion-col class="tour_content">
+            <i class="material-icons icon_location">
+              location_on
+            </i>
+            {{tourData.tour.locations}}
+          </ion-col>
+        </ion-row>
+        <ion-row class="padding">
+          <ion-col class="tour_content">
+            Offered in {{tourData.user.languages}}
+          </ion-col>
+        </ion-row>
+        <ion-row class="padding">
+          <ion-col class="tour_content">
+            {{tourData.tour.interests}}
+          </ion-col>
+        </ion-row>
+        <ion-row class="padding">
+          <ion-col class="tour_content">
+            <ng-container *ngIf="tourData.tour.price_per_adult > 0 && tourData.tour.price_per_children > 0" >
+              Family friendly
+            </ng-container>
+            <ng-container *ngIf="tourData.tour.price_per_adult > 0" >
+              Adults only
+            </ng-container>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-6>
+        <ion-row class="padding">
+          <ion-col col-4>
+            <img src="{{appInfo.common.url}}images/users/{{tourData.user.picture}}" class="guide_image" (click)="onClickViewGuide(tourData.guide)">
+          </ion-col>
+          <ion-col col-8 class="tour_content">
+            <ion-row (click)="onClickViewGuide(tourData.guide)">
+              <ion-col>
+                {{tourData.user.firstname}} {{tourData.user.lastname}}
+              </ion-col>
+            </ion-row>
+            <ion-row class="btn_more" (click)=clickViewMessage()>
+              <ion-col>
+                Message
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="tourData.tour?.about_tour" class="border_bottom margin padding">
+      <ion-col class="para_text">
+        {{tourData.tour.about_tour.substring(0, 120)}}
+        <span *ngIf="tourData.tour?.about_tour.length > 120" class="btn_more" (click)="clickViewAllAboutTour()">...more</span>
+      </ion-col>
+    </ion-row>
+    <ng-container *ngFor="let paragraph of tourData.custom_paragraph_tours">
+      <ion-row class="border_bottom padding">
+        <ion-col>
+          <ion-row class="para_title">{{paragraph.title}}</ion-row>
+          <ion-row class="para_text">{{paragraph.paragraph}}</ion-row>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+    <ion-row *ngIf="tourData?.reviews.length" class="margin padding">
+      <ion-col col-12 class="para_title">Reviews ({{tourData.reviews.length}})</ion-col>
+      <ion-col no-padding style="margin-top: 10px !important">
+        <ng-container *ngFor="let review of tourData.reviews;let i = index">
+          <ng-container *ngIf="i < 5">
+            <ion-row no-padding class="review_row">
+              <img src="{{appInfo.common.url}}images/users/{{review.picture}}" class="review_image">
+              <ion-col col-10 class="review_text">
+                <ion-row class="para_text">
+                  {{review.comment}}
+                </ion-row>
+                <ion-row class="review_date">
+                    {{review.updated_at}}
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ng-container>
+        </ng-container>
+        <span *ngIf="tourData.reviews.length > 5" class="btn_viewall" (click)="clickViewAllReviews()">View all</span>
+      </ion-col>
+    </ion-row>
+    <!-- <div class="footer" #fixedContentContainer ion-fixed>
+        
+      </div> -->
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-row>
+    <ion-col style="padding-top: 0px !important">
+      <ion-row>
+        <ion-col col-6 class="price">
+          <ion-row>
+            ${{tour.price_per_adult}} per person
+          </ion-row>
+          <ion-row class="rating-bar" text-right>
+            <ion-icon ios="ios-star" md="ios-star" *ngIf="tour.stars >= 1"></ion-icon>
+            <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="tour.stars == 0.5"></ion-icon>
+            <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="tour.stars <= 0"></ion-icon>
+
+            <ion-icon ios="ios-star" md="ios-star" *ngIf="tour.stars >= 2"></ion-icon>
+            <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="tour.stars == 1.5"></ion-icon>
+            <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="tour.stars <= 1"></ion-icon>
+
+            <ion-icon ios="ios-star" md="ios-star" *ngIf="tour.stars >= 3"></ion-icon>
+            <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="tour.stars == 2.5"></ion-icon>
+            <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="tour.stars <= 2"></ion-icon>
+
+            <ion-icon ios="ios-star" md="ios-star" *ngIf="tour.stars >= 4"></ion-icon>
+            <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="tour.stars == 3.5"></ion-icon>
+            <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="tour.stars <= 3"></ion-icon>
+
+            <ion-icon ios="ios-star" md="ios-star" *ngIf="tour.stars >= 5"></ion-icon>
+            <ion-icon ios="ios-star-half" md="ios-star-half" *ngIf="tour.stars == 4.5"></ion-icon>
+            <ion-icon ios="ios-star-outline" md="ios-star-outline" *ngIf="tour.stars <= 4"></ion-icon>
+            <span class="review_number">
+              ({{review_length}})
+            </span>
+          </ion-row>
+        </ion-col>
+        <ion-col col-6 no-padding class="btn_book" (click)="clickViewBookPage()">
+          Book
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-footer>

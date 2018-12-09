@@ -1,0 +1,17 @@
+page-viewall-guide {
+    ion-content{
+        margin-top: 28px !important;
+    }
+    .scroll-content{
+        padding-top: 0px !important;
+    }
+    .icon_back{
+        color: #767676;
+        z-index: 1000;
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        font-size: 3rem;
+        font-weight: 400
+    }
+}

@@ -1,0 +1,198 @@
+page-book {
+    ion-content{
+        margin-top: 30px !important;
+    }
+    ion-col{
+        padding-bottom: 0px !important;
+        font-weight: 500;
+    }
+    .scroll-content{
+        padding-top: 0px !important;
+    }
+    .icon_back{
+        color: #767676;
+        z-index: 1000;
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        font-size: 3rem;
+        font-weight: 400
+    }
+    .value_input{
+        border-color:#dedede;
+        border-style:solid;
+        border-width: 1px;
+        border-radius: 2px;
+        height: 33px;
+        margin: 0rem;
+        display: flex !important;
+        align-content: center !important;
+        align-items: center !important;
+        width: 100%;
+    }
+    .icon{
+        position: relative;
+        top: 5px;
+    }
+    .guide_name{
+        padding-left: 10px;
+        line-height: 40px;
+    }
+    .notes{
+        height: 90px;
+        border-color:#dedede;
+        border-style:solid;
+        border-width: 1px;
+        border-radius: 2px;
+        height: 100px;
+        margin: 0rem;
+        width: 100%;
+    }
+    .location{
+        font-weight: 500;
+    }
+    .guide_image{
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 100% !important;
+    }
+    ion-row{
+        padding-bottom: 10px;
+    }
+    .total_row{
+        padding-top: 10px;
+        border-top: 1px solid #dedede;
+    }
+    .member_row{
+        padding-bottom: 0px !important;
+    }
+    .guide_detail{
+        padding-left: 0px;
+    }
+    .item-icon-left .item-content {
+        padding-left:3em;  
+      }
+      
+    .item-icon-left i {
+    left:0;
+    right: auto;
+    }
+    .visa_image{
+        height: 30px;
+    }
+    .paypal_image{
+        height: 30px;
+        padding-left: 5px;
+    }
+    .payment_radio{
+        margin-right: 5px !important;
+    }
+    .btn_save{
+        margin-top: 0px;
+        background: #47bc00;
+        border-radius: 4px;
+        font-size: 1.5rem;
+        width: 100px;
+        height: 30px;
+        margin-right: 0px;
+        margin-bottom: 30px;
+    }
+    .date_picker{
+        position: absolute;
+        top: 16px;
+        width: 100%;
+        padding-left: 28px !important;
+        padding: 0px;
+    }
+    .time_picker{
+        width: 150px;  
+        padding: 0px;
+        margin-right: 0px !important;
+    }
+    .time_from{
+        position: absolute;
+        top: 0px;
+        left: 80px;
+    }
+    .time_to{
+        position: absolute;
+        top: 0px;
+        left: 180px;
+    }
+    .date_to{
+        position: absolute;
+        top: 16px;
+        right: 6px;
+    }
+    .date_range{
+        position: relative;
+    }
+    .span_to{
+        position: relative;
+        left: 80px;
+    }
+    .card_container{
+        padding-left: 10px;
+        ion-label{
+            font-size: 1.4rem;
+        }
+    }
+    .dates_container{
+        padding-left: 10px;
+        ion-label{
+            font-size: 1.2rem;
+        }
+    }
+
+    .time_select {
+        width: 70px;
+        padding: 0px;
+        .item-inner{
+            border: 0px !important;
+            padding: 0px !important;
+        }
+        ion-select {
+            border: 1px solid #dedede;
+            border-radius: 2px;
+            padding: 5px;
+            max-width: 100%;
+            height: 35px;
+            .select-text{
+                width:400px;
+                line-height: 30px;
+                font-size: 14px;
+            }
+            .select-icon-inner{
+                top:70% !important;
+            }
+            button{
+                max-width: 30% !important;
+            }
+        }
+    }
+    .StripeElement {
+        background-color: white;
+        height: 40px;
+        padding: 10px 0px !important;
+      }
+      
+    .StripeElement--focus {
+    }
+    
+    .StripeElement--invalid {
+    border-color: #fa755a;
+    }
+    
+    .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+    }
+    .checkbox-savecard{
+        margin-right: 10px !important;
+        margin-left: 0px !important;
+    }
+
+}
+.popover-md .popover-content{
+    width: 110px !important;
+}

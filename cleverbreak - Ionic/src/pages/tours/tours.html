@@ -1,0 +1,64 @@
+<!--
+  Generated template for the ToursPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton="false">
+    <ion-title>
+      <span *ngIf="searchInfo.keyword.length > 0">{{searchInfo.keyword}} - </span>
+      <span *ngIf="type == 'All'">Tours</span>
+      <span *ngIf="type != 'All'">Experiences by Locals</span>
+    </ion-title>
+  </ion-navbar>
+  <button class="small_button" ion-button round color="light" (click)="searchSelectDates($event)">
+    Dates
+    <span *ngIf="searchInfo.dateRange.from != null || searchInfo.dateRange.to != null">&nbsp;
+      <ion-icon name="checkmark"></ion-icon>
+    </span>
+  </button>
+  <button class="small_button" ion-button round color="light" (click)="searchSelectGuests($event)">
+    Guests
+    <span *ngIf="searchInfo.guests != '0'">&nbsp;
+      <ion-icon name="checkmark"></ion-icon>
+    </span>
+  </button>
+  <button class="small_button" ion-button round color="light" (click)="searchSelectInterests($event)">
+    Interests
+    <span *ngIf="searchInfo.interests.length > 0">&nbsp;
+      <ion-icon name="checkmark"></ion-icon>
+    </span>
+  </button>
+  <button class="small_button" ion-button round color="light" (click)="searchSelectPrice($event)">
+    Price
+    <span *ngIf="searchInfo.pricerange.min > 0 || searchInfo.pricerange.max > 0">&nbsp;
+      <ion-icon name="checkmark"></ion-icon>
+    </span>
+  </button>
+
+</ion-header>
+
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-row>
+      <ion-col col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 class="list-item" *ngFor="let tour of mainData.tours" (click)="clickViewTour(tour)">
+        <ion-row>
+          <img class="icon" src="{{appInfo.common.url}}images/tours/{{tour.photo}}" />
+        </ion-row>
+        <ion-row class="name">
+          {{tour.title}}
+        </ion-row>
+        <ion-row class="location loc-small" text-wrap>
+          {{tour.locations}} • {{tour.interests}}
+        </ion-row>
+        <ion-row class="price">
+          <span class="value">${{tour.price_per_adult}}</span>&nbsp;/ person
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>

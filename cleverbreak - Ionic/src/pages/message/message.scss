@@ -1,0 +1,98 @@
+page-message {
+    ion-header{
+        border-bottom: 0.1rem solid;
+        border-bottom-color: #cccccc;
+        padding-bottom: 0.5rem;
+        background-color: #f9f9f9;
+        height: 45px !important;
+    }
+    .tab_text{
+        font-size: 11px;
+        line-height: 9px;
+        height: 45px;
+        font-weight: 400;
+        padding-top: 3px;
+    }
+    .material-icons{
+        font-size: 24px !important;
+    }
+    .message-segment-header{
+        margin-top: 0px;
+        .segment-button{
+            font-size: 11px;
+            color: black;
+            border: 0;
+            border-bottom: 1px solid #dedede;
+            height: 45px;
+            background-color: #fff;
+            box-shadow: none !important;
+            transform: none !important;
+        }
+        .segment-button.segment-activated{
+            color: #47bc00;
+            border-bottom: 1px solid #47bc00;
+            background-color: #fff;
+        }
+    }
+    .message-segment-content{
+        padding-top: 0px;
+    }
+    ion-content{
+        margin-top: 4rem;
+        .fixed-content{
+            margin: 0px !important;
+        }
+        .scroll-content{
+            margin-top: 0px !important;
+        }
+        .list{
+            padding-bottom: 10px;
+            .item:first-child{
+                border-top-width: 0 !important;
+            }
+            .item:last-child{
+                border-bottom-width: 0 !important;
+            }
+
+            ion-item{
+                padding-left: 0.8rem !important; 
+                padding-right: 0.8rem !important; 
+                border-bottom: 1px solid #dedede;
+
+                .item-inner{
+                    padding-right: 0 !important;
+                    border-bottom-width: 0 !important;
+
+                    .label{
+                        margin-right: 0 !important;
+                        margin-bottom: 0.4rem !important;
+                    }
+                }
+
+                .col{
+                    padding: 0 !important;
+                }
+
+                .ion-avatar{
+                    .icon{
+                        margin-right: 0 !important;
+                    }
+                }
+
+                .msg-time{
+                    color: $primary-color-gray;
+                    font-size: 1.2rem;
+                    text-align: right;
+                    font-weight: normal;
+                }
+
+                .last-msg-content{
+                    font-weight: 400;
+                    font-size: 90%;
+                    color: $primary-color-gray;
+                }
+            }
+            
+        }
+    }
+}

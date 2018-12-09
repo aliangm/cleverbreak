@@ -1,0 +1,110 @@
+page-edit-request {
+    ion-header{
+        background: #fff;
+        border-bottom: 1px solid #dedede;
+        .icon_back{
+            color: #767676;
+            z-index: 1000;
+            position: absolute;
+            top: 8px;
+            right: 3px;
+            font-size: 3rem;
+            font-weight: 400
+        }
+        .title{
+            padding-left: 2rem;
+            line-height: 45px;
+            top: 0rem;
+            font-weight: bold;
+            color: #1a1a1a;
+            font-size: 2rem;
+            height: 45px !important;
+            padding-top: 0rem;
+            padding-bottom: 0rem
+        }    
+    }
+    ion-content{
+        margin-top: 20px;
+        padding: 5px !important;
+        .scroll-content{
+            padding: 5px !important;
+        }
+        .text_input{
+            border-color:#dedede;
+            border-style:solid;
+            border-width: 1px;
+            height: 35px;
+            border-radius: 2px;
+            display: flex !important;
+            align-content: center !important;
+            align-items: center !important;
+        }
+        .language_select {
+            padding: 0px;
+            .item-inner{
+                border: 0px !important;
+            }
+            ion-select {
+                border: 1px solid #dedede;
+                padding: 5px;
+                max-width: 60%;
+                height: 35px;
+                .select-text{
+                    width:400px;
+                }
+                button{
+                    max-width: 30% !important;
+                }
+            }
+        }
+        .interest_select {
+            padding: 0px;
+            .item-inner{
+                border: 0px !important;
+                padding: 0px !important;
+            }
+            .select-text{
+                width:100% !important;
+            }
+            ion-select {
+                border: 1px solid #dedede;
+                padding: 5px;
+                max-width: 100% !important;
+                width: 100%;
+                height: 35px;
+                
+                button{
+                    max-width: 100% !important;
+                    padding: 0px !important;
+                }
+            }
+        }
+        .time_picker{
+            border:1px solid #dedede;
+            height: 35px;
+        }
+        .date_picker{
+            border:1px solid #dedede;
+            height: 35px;
+        }
+        .btn_publish{
+            margin-top: 0px;
+            background: #47bc00;
+            border-radius: 4px;
+            font-size: 1.5rem;
+            width: 120px;
+            height: 30px;
+            margin-right: 0px;
+            margin-bottom: 30px;
+            margin-left:90px;
+        }
+    }
+    .about_text{
+        border-color:#dedede;
+        border-style:solid;
+        border-width: 1px;
+        height: 35px;
+        border-radius: 2px;
+        height: 100px;
+    }
+}

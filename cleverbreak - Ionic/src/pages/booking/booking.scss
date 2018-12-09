@@ -1,0 +1,78 @@
+page-booking {
+    .tour_container{
+        margin-top: 10px;
+        max-height: 13rem;
+    }
+    .tour_container_first{
+        max-height: 13rem;
+    }
+    .tour_img{
+        width: 100% !important;
+        min-height: 8rem !important;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 2px;
+    }
+    .scroll-content{
+        margin-top: 46px !important;
+    }
+    .location_icon{
+        position: relative;
+        top: 3px;
+        font-size: 15px;
+    }
+    .date_icon{
+        position: relative;
+        top: 3px;
+        font-size: 15px;
+    }
+    .booking_content{
+        padding: 1rem;
+        ion-col{
+            padding: 0px;
+        }
+        .tour_title{
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+        .tour_location{
+            font-size: 1.2rem;
+            font-weight: bold;
+            line-height: 11px;
+        }
+        .tour_date{
+            font-size: 1.2rem;
+            font-weight: bold;
+            line-height: 11px;
+        }
+        .tour_status{
+            margin-top: 10px;
+        }
+    }
+    .pending{
+        margin: 0px;
+        color: #484848;
+        border-color: #dce0e0;
+        border-style: solid;
+        border-width: 1px;
+        width: 110px;
+        height: 27px;
+        border-radius: 2px;
+        background: #ffffff;
+        box-shadow: none;
+    }
+    .confirmed{
+        margin: 0px;
+        color: #47bc00;
+        border-color: #dce0e0;
+        border-style: solid;
+        background: #ffffff;
+        box-shadow: none;
+        border-width: 1px;
+        width: 110px;
+        height: 27px;
+        border-radius: 2px;
+        letter-spacing: 0.2px;
+        
+    }
+}

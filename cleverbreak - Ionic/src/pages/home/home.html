@@ -1,0 +1,7 @@
+<ion-tabs #mainTabs>
+  <ion-tab [root]="tab1Main" tabTitle="EXPLORE" tabIcon="tab_explore"></ion-tab>
+  <ion-tab [root]="tab2Guides" tabTitle="GUIDES" tabIcon="tab_guides"></ion-tab>
+  <ion-tab [root]="tab3Trips" tabTitle="TRIPS" tabIcon="tab_trips" (ionSelect)="onSelectTrips()"></ion-tab>
+  <ion-tab [root]="tab4Message" tabTitle="INBOX" tabIcon="tab_message" (ionSelect)="onSelectMessage()"></ion-tab>
+  <ion-tab [root]="tab5Profile" tabTitle="PROFILE" tabIcon="tab_profile" (ionSelect)="onSelectTrips()"></ion-tab>
+</ion-tabs>

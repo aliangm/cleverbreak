@@ -1,0 +1,122 @@
+page-personal-information {
+    ion-content{
+        margin-top: 0rem;
+    }
+    ion-row{
+        padding-top: 0rem !important;
+    }
+    ion-col{
+        padding: 0rem;
+    }
+    .title{
+        padding-left: 8rem;
+        line-height: 4.3rem;
+        position: absolute;
+        top: 0rem;
+        font-weight: bold;
+        color: #1a1a1a;
+        font-size: 2rem;
+    }
+    .header{ 
+        height: 4.3rem;
+        border-bottom-style: solid; 
+        border-bottom-color:#dedede;
+        border-bottom-width: 1px;
+    }
+    .back_icon{
+        z-index: 1000;
+        position: absolute;
+        top: 0rem;
+        left: 2.1rem;
+        line-height: 4.3rem;
+        font-size: 3rem;
+        font-weight: 400;
+    }
+    .date{
+        border-color:#dedede;
+        border-style:solid;
+        border-width: 1px;
+        padding-top: 1rem;
+        padding-left: 0.5rem !important;
+        height: 4rem;
+        vertical-align: middle;
+        line-height: 4rem !important; 
+    }
+    .about_me{
+        border-color:#dedede;
+        border-style:solid;
+        border-width: 1px;
+        border-radius: 2px;
+        padding-top: 2px;
+        height: 9rem !important;
+    }
+    .text_input{
+        border-color:#dedede;
+        border-style:solid;
+        border-width: 1px;
+        height: 4rem;
+        border-radius: 2px;
+        display: flex !important;
+        align-content: center !important;
+        align-items: center !important;
+    }
+    .subtitle{
+        color: #1a1a1a;
+        font-size: 1.6rem;
+        font-weight: bold;
+        padding-bottom: 0rem;
+    }
+    .interest_selected{
+        padding-bottom: 2rem;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-left: 5px;
+        border-bottom-color: #dedede;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        margin-right: 5px;
+        color: #1a1a1a;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .btn_save{
+        margin-top: 2rem;
+        background: #47bc00;
+        border-radius: 4px;
+        font-size: 1.5rem;
+        width: 83px;
+        height: 30px;
+        margin-right: 0px;
+    }
+    .input_col{
+        padding-top: 0.1rem !important;
+    }
+    .interest_select {
+        padding: 0px;
+        .item-inner{
+            border-bottom-width: 0px !important;
+        }
+        .select-icon{
+            .select-icon-inner{
+                top: 60%;
+            }
+        }
+        ion-label {
+            max-width: 22%;
+            margin-right: 0px;
+            color: #1a1a1a !important;
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+        ion-select {
+            padding-left: 0px;
+            max-width: 26%;
+            .select-text{
+                display: none !important;
+            }
+            button{
+                max-width: 30% !important;
+            }
+        }
+      }
+}

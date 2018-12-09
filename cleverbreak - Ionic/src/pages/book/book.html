@@ -1,0 +1,221 @@
+<!--
+  Generated template for the BookPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <i class="material-icons icon_back" (click)="closeBookPage()">
+    close
+  </i>
+</ion-header>
+<ion-content padding>
+  <ion-row class="member_row">
+    <ion-col>
+        Adults
+    </ion-col>
+  </ion-row>
+  <ion-row  class="member_row">
+    <ion-col>
+      <ion-input class="value_input" [(ngModel)]="number_adults" (onChange)="price_adults = number_adults * tourData.tour.price_per_adult * hours" type="number"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row  class="member_row">
+    <ion-col>
+      Children(4-18)
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-input class="value_input" [(ngModel)]="number_children" type="number" (onChange)="price_children = number_children * tourData.tour.price_per_children * hours"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row  class="member_row">
+    <ion-col>
+      Additional notes
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-input class="notes" [(ngModel)]="additional">
+      </ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col>
+      <ion-row>
+        <img src="{{appInfo.common.url}}images/users/{{tourData.user.picture}}" class="guide_image">
+        <ion-col class="guide_name">
+          {{tourData.user.firstname}} {{tourData.user.lastname}}
+        </ion-col>
+      </ion-row>
+      <ion-row class="padding">
+        <ion-col class="guide_detail">
+          <i class="material-icons icon">
+            location_on
+          </i>
+          {{tourData.tour.locations}}
+        </ion-col>
+      </ion-row>
+      <ng-container *ngIf="anyTime == true">
+      <ion-row>
+        <ion-col class="guide_detail">
+            <i class="material-icons icon date_range">
+                date_range
+              </i>Date and Time
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="guide_detail dates_container">
+          <i class="material-icons icon date_range">
+            date_range
+          </i>
+          <ion-datetime displayFormat="DDD MMM D, YYYY" [(ngModel)]="tour_date_from" min={{tour_date_from}} max="2050-12-31"  class="date_picker"></ion-datetime>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="guide_detail dates_container"> 
+          <i class="material-icons icon item_icon">
+            access_time
+          </i>
+          <span class="span_from">From</span>
+          <ion-item class="time_select time_from" >
+            <ion-select [(ngModel)]="time_from" interface="popover" (ionChange)="selectFromTime()" >
+              <ng-container *ngFor="let time of fromTimes">
+                <ion-option>{{time}}</ion-option>
+              </ng-container>
+            </ion-select>
+          </ion-item>
+          <span class="span_to">To</span>
+          <ion-item class="time_select time_to" >
+              <ion-select [(ngModel)]="time_to" interface="popover" (ionChange)="selectToTime()">
+                <ng-container *ngFor="let time of toTimes">
+                  <ion-option>{{time}}</ion-option>
+                </ng-container>
+              </ion-select>
+            </ion-item>
+          <!--<ion-datetime displayFormat="HH:00" [(ngModel)]="time_from" class="time_picker time_from"></ion-datetime>-->
+          <!-- <ion-datetime displayFormat="HH:00" [(ngModel)]="time_to" min={{time_from}} class="time_picker time_to"></ion-datetime>-->
+        </ion-col>
+      </ion-row>
+      </ng-container>
+      <ng-container *ngIf="anyTime == false">
+        <ion-row no-padding>
+          <ion-col class="guide_detail">
+              <i class="material-icons icon date_range">
+                  date_range
+                </i>&nbsp;Date and Time
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col no-padding class="guide_detail">
+            <ion-list radio-group no-margin>
+            <ion-item *ngFor="let date of tourData.dates" no-lines no-padding class="dates_container">
+              <ion-radio value="{{date.id}}" item-left class="payment_radio" (ionSelect)="SelectDate(date)">
+              </ion-radio>
+              <ion-label>
+                  <i class="material-icons icon date_range">
+                    date_range
+                  </i>&nbsp;{{date.dateFrom}}<br/>
+                  <i class="material-icons icon item_icon">
+                      access_time
+                  </i>  From  {{date.timeFrom}}&nbsp;&nbsp;To&nbsp;&nbsp;{{date.timeTo}}
+              </ion-label>
+            </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+      <ion-row>
+        <ion-col class="guide_detail">
+          <i class="material-icons icon">
+            people
+          </i>
+          {{number_adults}} adults, {{number_children}} children, {{number_infants}} infants
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-7 class="guide_detail">
+          ${{tourData.tour.price_per_adult}} * {{number_adults}} adults {{hours}} Hours
+        </ion-col>
+        <ion-col col-5 text-right>
+            ${{number_adults * tourData.tour.price_per_adult * hours}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-7 class="guide_detail">
+            ${{tourData.tour.price_per_children}} * {{number_children}} children {{hours}} Hours
+          </ion-col>
+          <ion-col col-5 text-right>
+              ${{number_children * tourData.tour.price_per_children * hours}}
+          </ion-col>
+        </ion-row>
+      <ion-row class="total_row">
+        <ion-col col-6 class="guide_detail">
+          Total
+        </ion-col>
+        <ion-col col-6>
+          ${{number_children * tourData.tour.price_per_children * hours + number_adults * tourData.tour.price_per_adult * hours}}
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col no-padding>
+      <ion-list radio-group no-margin>
+        <ion-item no-lines no-padding>
+          <ion-radio value="visa" item-left class="payment_radio" (ionSelect)="SelectPayment(1)" checked="true">
+          </ion-radio>
+          <img src="{{appInfo.common.url}}images/common/payment_methods.png" item-start class="visa_image">
+        </ion-item>
+        <ion-list *ngIf="paymentType == 1" radio-group no-margin class="card_container" >
+          <ng-container *ngIf="appInfo.common.cards[0].id">
+            <ion-item *ngFor="let card of appInfo.common.cards" no-lines no-padding>
+              <ion-radio value="{{card.id}}" item-left class="payment_radio" (ionSelect)="SelectCard(card)">
+              </ion-radio>
+              <ion-label>
+                ************{{card.last4}}
+              </ion-label>
+            </ion-item>
+            <ion-item no-lines no-padding>
+              <ion-radio item-left value="abc" class="payment_radio" (ionSelect)="SelectNewCard()">
+              </ion-radio>
+              <ion-label>
+                New Card
+              </ion-label>
+            </ion-item>
+            <form action="/charge" method="post" id="payment-form">
+              <div class="form-row">
+                <label for="card-element" *ngIf="newCard">
+                  Credit or debit card
+                </label>
+                <div id="card-element">
+                  <!-- A Stripe Element will be inserted here. -->
+                </div>
+            
+                <!-- Used to display form errors. -->
+                <div id="card-errors" role="alert"  *ngIf="newCard"></div>
+              </div>
+            </form>
+            <ion-item  *ngIf="newCard" no-lines no-padding>
+              <ion-checkbox [(ngModel)]="saveCard" class="checkbox-savecard"></ion-checkbox>
+              <ion-label>Save card for future use</ion-label>
+            </ion-item>
+          </ng-container>
+        </ion-list>
+        <ion-item no-lines no-padding>
+            <ion-radio value="paypal" item-left class="payment_radio" (ionSelect)="SelectPayment(2)">
+            </ion-radio>
+            <img src="https://www.braintreepayments.com/images/features/paypal/paypal-button@2x-d5ec2863.png" item-start class="paypal_image">
+        </ion-item>
+      </ion-list>    
+    </ion-col>
+  </ion-row>
+  <ion-row class="button_container">
+      <ion-col text-right>
+        <button ion-button class="btn_save" (click)="onClickContinueButton()">
+          Continue
+        </button>
+      </ion-col>
+  </ion-row>
+</ion-content>

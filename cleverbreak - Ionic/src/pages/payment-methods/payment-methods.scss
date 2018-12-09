@@ -1,0 +1,103 @@
+page-payment-methods {
+    ion-content{
+        margin-top: 0rem;
+    }
+    .type_tour{
+        padding-bottom: 0rem;
+        
+    }
+    .title{
+        padding-left: 8rem;
+        line-height: 4.3rem;
+        position: absolute;
+        top: 0rem;
+        font-weight: bold;
+        color: #1a1a1a;
+        font-size: 2rem;
+        height: 4.3rem !important;
+        padding-top: 0rem;
+        padding-bottom: 0rem
+    }
+    .header{ 
+        height: 4.3rem;
+        border-bottom-style: solid; 
+        border-bottom-color:#dedede;;
+        border-bottom-width: 1px;
+    }
+    .back_icon{
+        z-index: 1000;
+        position: absolute;
+        left: 2rem;
+        line-height: 4.3rem;
+        font-size: 3rem;
+        font-weight: 400;
+    }
+    .new{
+        padding-top: 12px;
+        height: 10rem;
+        border-color: #dedede;
+        border-width: 1px;
+        border-radius: 4px;
+        border-style: solid;
+        font-weight: 600;
+        font-size: 1.6rem;
+        text-align: center;
+        align-content: center;
+        margin-top: 1rem;
+        flex-basis: 46% !important;
+        max-width: 46% !important;
+    }
+    .card_wrapper{
+        height: 10rem;
+        border-color: #dedede;
+        border-width: 1px;
+        border-radius: 4px;
+        border-style: solid;
+        font-weight: 600;
+        font-size: 1.6rem;
+        text-align: center;
+        align-content: center;
+        padding-top: 15px;
+        margin-top: 1rem;
+        flex-basis: 46% !important;
+        max-width: 46% !important;
+    }
+    .paypal_wrapper{
+        height: 10rem;
+        border-color: #dedede;
+        border-width: 1px;
+        border-radius: 4px;
+        border-style: solid;
+        font-weight: 600;
+        font-size: 1.6rem;
+        text-align: center;
+        align-content: center;
+        padding-top: 20px;
+        margin-top: 1rem;
+        flex-basis: 46% !important;
+        max-width: 46% !important;
+    }
+    .add_icon{
+        font-size: 38px;
+        font-weight: 600;
+        line-height: 40px;
+    }
+    .icon_payment{
+        width: 27px;
+        height: 22px;
+    }
+    .card_container{
+        padding-left: 20px;
+        padding-right: 20px;
+        position: relative;
+        ion-col:nth-child(even){
+            margin-left: auto;
+        }
+    }
+    .btn_removecard{
+        margin-top: 2px;
+        color:#00698c;
+        font-weight: 500;
+        font-size: 1.3rem;
+    }
+}

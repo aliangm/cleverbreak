@@ -1,0 +1,158 @@
+page-guideview {
+    ion-content{
+        #imageViewer{
+            padding: 0px !important;
+        }
+        .tour_title{
+            font-weight: bold;
+            font-size: 2.4rem;
+            margin-top: 40px;
+        }
+        .back_icon{
+            z-index: 1000;
+            position: absolute;
+            top: 0.3rem;
+            left: 1rem;
+            line-height: 4.3rem;
+            font-size: 3rem;
+            font-weight: 400;
+            color:white;
+        }
+        .margin{
+            margin-top: 40px;
+        }
+        .padding{
+            padding-left: 7px !important;
+            padding-right: 7px !important;
+        }
+        .guide_content{
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #000000;
+            padding-bottom: 8px;
+        }
+        .icon_verified{
+            position: relative;
+            top: -0.5rem;
+            color: #47b436;
+            left: 2px;
+            font-size:25px;
+        }
+        .guide_image{
+            border-radius: 50%;
+            width: 4.5rem;
+            height: 4.5rem;
+        }
+        .review_image{
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            position: relative;
+            top: 4px;
+            left: 0.5rem;
+        }
+        .btn_more{
+            color: #00698c;
+        }
+        .btn_viewall{
+            color: #00698c;
+            position: absolute;
+            z-index: 1000;
+            bottom: 1rem;
+            right: 3px;
+            font-weight: 500;
+        }
+        .price{
+            padding-left: 1rem;
+            line-height: 4rem;
+            border-top:#dedede 1px solid;
+            font-weight: 600;
+        }
+        .btn_follow{
+            position: absolute; 
+            bottom: 1rem; 
+            right: 8px; 
+            z-index: 1000;
+            background-color: #1b9af7;
+            color: white;
+            height: 3rem;
+            width: 7rem;
+        }
+        .btn_msg{
+            position: absolute; 
+            bottom: 1.5rem; 
+            right: 11rem; 
+            z-index: 1000;
+            color: white;
+            z-index: 1000;
+            font-size: 2.7rem;
+        }
+        .review_row{
+            margin-bottom: 20px;
+        }
+        .review_text{
+            padding-left: 1.7rem;
+            padding-top: 0rem
+        }
+        .review_date{
+            padding-top: 3px !important;
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+        .para_title{
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding-bottom: 5px !important;
+        }
+        .para_text{
+            font-weight: 500;
+        }
+        .rating-bar{
+            color: #00a3a9;
+        }
+        .img_tours{
+            height: 50px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    ion-footer{
+        border-top: 0px !important;
+        .header-md::after,
+        .tabs-md[tabsPlacement="top"] > .tabbar::after,
+        .footer-md::before,
+        .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+            background-image: none !important;
+        }
+        .price{
+            border-top:#dedede 0px solid;
+            font-weight: 600;
+        }
+
+        .btn_book{
+            padding-right: 0px !important;
+            padding-left: 0px !important;
+            padding-top: 0px !important; 
+            font-size: 2rem !important;
+            width:100% !important;
+            border-radius: 0px !important;
+            padding: 0px !important;
+            margin: 0px !important;
+            height: 5rem !important;
+            line-height: 5rem;
+            text-align: center;
+            border-top:#ff3d4e 0px solid !important;
+            background: #ff3d4e !important; 
+            color: white;
+        }
+        .rating-bar{
+            color: #00a3a9;
+        }
+        .review_number{
+            line-height: 100%;
+            color:black;
+            font-weight: 600;
+            padding-left: 0.5rem;
+        }
+    }
+}

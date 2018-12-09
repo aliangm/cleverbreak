@@ -1,0 +1,25 @@
+page-image-slide {
+    ion-header{
+        height: 40px !important;
+    }
+    
+    .scroll-content{
+        padding-top: 0px !important;
+    }
+    ion-row{
+        height: 250px !important;
+    }
+    img{
+        width: 100%;
+        height: 230px;
+    }
+    .icon_close{
+        color: #767676;
+        z-index: 1000;
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        font-size: 3rem;
+        font-weight: 400;
+    }
+}

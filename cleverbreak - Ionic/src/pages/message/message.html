@@ -1,0 +1,96 @@
+<!--
+  Generated template for the MessagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+<div class="message-segment-header">
+    <ion-segment [(ngModel)]="pageType">
+      <ion-segment-button value="text">
+        <ion-row no-padding>
+          <ion-col no-padding class="tab_text">
+            <i class="material-icons">mail_outline</i><br>
+            Messages
+        </ion-col>
+        </ion-row>
+      </ion-segment-button>
+      <ion-segment-button value="call" (click)="loadVoiceList()">
+          <ion-row no-padding>
+            <ion-col no-padding class="tab_text">
+              <i class="material-icons">call</i><br>
+              Calls
+          </ion-col>
+          </ion-row>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
+<ion-content padding>
+  
+
+  <div class="message-segment-content" [ngSwitch]="pageType">
+    <ion-list class="message-segment-textmsg" *ngSwitchCase="'text'">
+      <ng-container *ngFor="let conv of convList.msg_user_list">
+      <ng-container *ngIf="conv?.targetUser">
+      <ion-item  (click)="clickUser(conv)">
+        <ion-row >
+          <ion-col col-2>
+            <ion-avatar>
+              <img class="icon" src="{{appInfo.common.url}}images/users/{{conv.targetUser.picture}}" />
+            </ion-avatar>
+          </ion-col>
+          <ion-col col-10>
+            <ion-row>
+              <ion-col col-8>
+                {{conv.targetUser.firstname}} {{conv.targetUser.lastname}}
+              </ion-col>
+              <ion-col col-4 text-wrap class="msg-time">
+                {{conv.conversation.lastMessageData.created | amParse:'YYYY-MM-DD HH:mm:ss' | amDateFormat: 'MMM DD HH:mm'}}
+              </ion-col>
+            </ion-row>
+            <ion-row class="last-msg-content" text-nowrap>
+              <!-- <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" color="primary" *ngIf="appInfo.common.userProfile.id == conv.conversation.lastMessageData.user_from"></ion-icon>
+              <ion-icon ios="ios-arrow-back" md="ios-arrow-back" color="secondary" *ngIf="appInfo.common.userProfile.id == conv.conversation.lastMessageData.user_to"></ion-icon> -->
+              &nbsp;{{conv.conversation.lastMessageData.msg}}
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      </ng-container>
+      </ng-container>
+    </ion-list>
+
+    <ion-list class="message-segment-voicemsg" *ngSwitchCase="'voice'">
+      <ion-item *ngFor="let conv of convVoiceList.msg_user_list" (click)="clickUser(conv)">
+        <ion-row>
+          <ion-col col-2>
+            <ion-avatar>
+              <img class="icon" src="{{appInfo.common.url}}images/users/{{conv.targetUser.picture}}" />
+            </ion-avatar>
+          </ion-col>
+          <ion-col col-10>
+            <ion-row>
+              <ion-col col-8>
+                {{conv.targetUser.firstname}} {{conv.targetUser.lastname}}
+              </ion-col>
+              <ion-col col-4 text-wrap class="msg-time">
+                {{conv.conversation.lastMessageData.created | amParse:'YYYY-MM-DD HH:mm:ss' | amDateFormat: 'MMM DD HH:mm'}}
+              </ion-col>
+            </ion-row>
+            <ion-row class="last-msg-content" text-nowrap>
+              
+              <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" color="primary" *ngIf="appInfo.common.userProfile.id == conv.conversation.lastMessageData.user_from"></ion-icon>
+              <ion-icon ios="ios-arrow-back" md="ios-arrow-back" color="secondary" *ngIf="appInfo.common.userProfile.id == conv.conversation.lastMessageData.user_to"></ion-icon>
+              &nbsp;&nbsp;
+              <ion-icon ios="ios-call" md="md-call" color="secondary" *ngIf="conv.conversation.lastMessageData.status == 3"></ion-icon>
+              <ion-icon ios="ios-call" md="md-call" color="danger" *ngIf="conv.conversation.lastMessageData.status == 4"></ion-icon>
+              
+              &nbsp;{{conv.conversation.lastMessageData.msg}}
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

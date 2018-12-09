@@ -1,0 +1,44 @@
+page-new-payment-method {
+        .tabs .tabbar{
+            background-color: transparent !important;
+        }
+        .tabbar{
+            border-bottom: 0px !important;
+            height: 45px !important;
+        }
+        .tabs-ios.tab-button{
+            &[aria-selected="true"]{
+                color:#47bc00 !important;
+            }
+        }
+        .tab-button-text{
+            font-size: 1.6rem !important;
+            line-height: 45px !important;
+        }
+        ::after{
+            display: none;
+        }
+        .tab-button{
+            font-weight: bold !important;
+            background: transparent;
+            border-bottom-width: 1px;
+            border-style: solid;
+            border-bottom-color: #dedede;
+            height: 45px !important;
+            min-height: 45px !important;
+            &[aria-selected="true"]{
+                
+                border-bottom-color: #47bc00 !important;
+                border-bottom-width: 1px;
+                border-style: solid;
+                .tab-button-text{
+                    font-size: 1.6rem !important;
+                    line-height: 45px !important;
+                    color: #47bc00 ;
+                    transform: none !important;
+                    transform: none !important;
+                }
+            }
+            
+        }
+}

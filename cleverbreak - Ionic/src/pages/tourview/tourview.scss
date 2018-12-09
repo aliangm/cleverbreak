@@ -1,0 +1,170 @@
+page-tourview {
+    ion-content{
+        #imageViewer{
+            padding: 0px !important;
+        }
+        .tour_title{
+            font-weight: bold;
+            font-size: 2.4rem;
+            margin-top: 40px;
+        }
+        .tour_content{
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #000000;
+        }
+        .icon_location{
+            position: relative;
+            top: 0.5rem;
+            left: -0.2rem;
+        }
+        .guide_image{
+            border-radius: 50%;
+            width: 4.5rem;
+            height: 4.5rem;
+        }
+        .review_image{
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            position: relative;
+            top: 4px;
+            left: 0.5rem;
+        }
+        .review_date{
+            padding-top: 3px !important;
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+        .para_title{
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding-bottom: 5px !important;
+        }
+        .para_text{
+            font-weight: 500;
+        }
+        
+        .btn_more{
+            color: #00698c;
+        }
+        .btn_viewall{
+            color: #00698c;
+            position: absolute;
+            z-index: 1000;
+            bottom: 1rem;
+            right: 3px;
+            font-weight: 500;
+        }
+        .btn_morephoto{
+            position: absolute;
+            bottom: 1rem;
+            right: 5px;
+            z-index: 1000;
+            color: #fff;
+            font-size: 2.7rem;
+        }
+        .button-full{
+            padding-right: 0px !important;
+            padding-left: 0px !important;
+            padding-top: 0px !important; 
+            font-size: 2rem !important;
+            width:100% !important;
+            border-radius: 0px !important;
+            padding: 0px !important;
+            margin: 0px !important;
+            height: 5rem !important;
+            border-top:#ff3d4e 1px solid !important;
+            background: #ff3d4e !important; 
+            margin: 10px !important;
+        }
+        .review_row{
+            margin-bottom: 20px;
+        }
+        .review_text{
+            padding-left: 1.7rem;
+            padding-top: 0rem
+        }
+        .image_container{
+            width: calc(100% + 10px);
+            margin: -5px;
+            height: 230px;
+        }
+        .icon_back{
+            color: rgb(255, 255, 255);
+            z-index: 1000;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 3rem;
+            font-weight: 400
+        }
+        .icon_heart{
+            color: #f92534;
+            position: absolute;
+            top: 1rem;
+            right: 5px;
+            z-index: 1000;
+            font-size: 27px
+        }
+        .border_bottom{
+            border-bottom: #dedede solid 1px;
+        }
+        .margin{
+            margin-top: 40px;
+        }
+        .footer{
+            height: 5rem;
+            position: absolute;
+            bottom: 0rem;
+        }
+        ion-slide{
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            
+            img{
+                width: 100% !important;
+                object-fit: cover;
+                height: 12 rem;
+            }
+        }
+        .padding{
+            padding-left: 7px !important;
+            padding-right: 7px !important;
+        }
+    }
+    ion-footer{
+        .price{
+            border-top:#dedede 0px solid;
+            font-weight: 600;
+        }
+
+        .btn_book{
+            padding-right: 0px !important;
+            padding-left: 0px !important;
+            padding-top: 0px !important; 
+            font-size: 2rem !important;
+            width:100% !important;
+            border-radius: 0px !important;
+            padding: 0px !important;
+            margin: 0px !important;
+            height: 5rem !important;
+            line-height: 5rem;
+            text-align: center;
+            border-top:#ff3d4e 0px solid !important;
+            background: #ff3d4e !important; 
+            color: white;
+        }
+        .rating-bar{
+            color: #00a3a9;
+        }
+        .review_number{
+            line-height: 100%;
+            color:black;
+            font-weight: 600;
+            padding-left: 0.5rem;
+        }
+        
+    }
+}

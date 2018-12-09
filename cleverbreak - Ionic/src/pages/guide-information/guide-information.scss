@@ -1,0 +1,167 @@
+page-guide-information {
+    ion-content{
+        margin-top: 0rem;
+    }
+    ion-toggle{
+        width: 45px !important;
+        height: 25px !important;
+        padding-left: 2px;
+        .toggle-inner{
+            width: 15px !important;
+            height: 15px !important;
+            position: relative;
+            top:2px !important;
+            
+        }
+        .toggle-icon{
+            width: 45px !important;
+            height: 23px !important;
+        }
+        
+    }
+    .toggle-md .toggle-checked .toggle-inner{
+        -webkit-transform: translate3d(25px, 0, 0) !important;
+        transform: translate3d(25px, 0, 0) !important;
+     }
+    .type_tour{
+        padding-bottom: 0rem;
+        
+    }
+    .title{
+        padding-left: 8rem;
+        line-height: 4rem;
+        position: absolute;
+        top: 0rem;
+        font-weight: bold;
+        color: #1a1a1a;
+        font-size: 2rem;
+    }
+    .header{ 
+        height: 4rem;
+        border-bottom-style: solid; 
+        border-bottom-color:#dedede;
+        border-bottom-width: 1px;
+    }
+    .back_icon{
+        z-index: 1000;
+        position: absolute;
+        top: 0rem;
+        left: 1.6rem;
+        line-height: 4.3rem;
+        font-size: 3rem;
+        font-weight: 400;
+    }
+
+    .subtitle{
+        color: #1a1a1a;
+        font-size: 1.6rem;
+        font-weight: bold;
+        line-height: 3rem;
+    }
+    .btn_save{
+        margin-top: 2rem;
+        background: #47bc00;
+        border-radius: 4px;
+        font-size: 1.2rem;
+        width: 8rem;
+        height: 3.5rem;
+        box-shadow: none;
+    }
+    .input_col{
+        padding-top: 0.1rem !important;
+    }
+    .singleline_text{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-height: 2rem;
+        line-height: 2rem;
+        padding-top: 0rem;
+        font-weight: 200;
+        font-size: 1.3rem;
+        color: #4b4b4b;
+    }
+    .checkbox{
+        padding-top: 1rem;
+        width:2rem;
+        height: 2rem;
+    }
+    .toggle{
+        padding: 0rem;
+    }
+    .price{
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #4b4b4b;
+        line-height: 3.5rem;
+        padding-bottom: 0rem;
+        padding-left: 0px !important
+    }
+    .experience{
+        height: 8rem !important;
+    }
+    .trashbin{
+        position: relative;
+        top: 0rem;
+        color: red;
+        float: right;
+    }
+    .add{
+        position: relative;
+        top: 0.7rem;
+        color: #49e845;
+    }
+    .detail{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #4b4b4b;
+        padding-bottom: 0rem;
+        padding-left: 0px !important
+    }
+    .nopaddingbottom{
+        padding-bottom: 0rem;
+    }
+    .detail_input{
+        padding-top: 0.1rem;
+        padding-bottom: 0rem;
+        padding-left: 0px !important;
+    }
+    .paragraph_input{
+        padding-top: 1rem;
+        padding-bottom: 0rem;
+        padding-left: 0px !important;
+    }
+    .nopaddingup{
+        padding-top: 0rem;
+    }
+    .singleline_input{
+        border-color:#dedede;
+        border-style:solid;
+        border-width: 1px;
+        height: 3.5rem;
+        width: 100%;
+        margin: 0rem;
+        border-radius: 2px;
+        display: flex !important;
+        align-content: center !important;
+        align-items: center !important;
+    }
+    .multiline_input{
+        border-color:#dedede;
+        border-style:solid;
+        border-width: 1px;
+        height: 80px;
+        width: 100%;
+        margin: 0rem;
+        border-radius: 2px;
+        .text-input{
+            height: 65px;
+        }
+    }
+    /* .checkbox-checked .checkbox-inner { 
+        position: absolute; 
+        top: 9px; 
+        left: 13px; 
+        height: 11px; 
+        width: 5px;
+    } */
+}

@@ -1,0 +1,50 @@
+page-tours {
+    ion-header{
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        background-color: $searchbarBgcolor;
+        padding: 15px; 
+
+        .toolbar-background{
+            background-color: transparent;
+        }
+        .searchbar {
+            padding-left: 0; padding-right: 0;
+            background-color: transparent;
+            border-bottom-width: 0 !important;
+        }
+        .small_button{
+            padding: 0 0.6rem !important;
+            height: 1.6rem !important;
+            .button-inner{
+                height: 100%;
+                font-size: 0.8rem;
+            }
+        }
+        .searchbar-input{
+            box-shadow: none !important;
+        }
+    }
+
+    ion-content{
+        .list-item{
+            .row:first-child{
+                max-height: 15rem;
+
+                img{
+                    object-fit: cover;
+                }
+            }
+            
+            .name{
+                padding-top: 0.3rem;
+                padding-bottom: 0.3rem;
+                font-weight: bold;
+            }
+            .location{
+                word-break: break-all;
+                padding-bottom: 0.3rem;
+            }
+        }
+    }
+}
